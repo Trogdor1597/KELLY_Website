@@ -1,0 +1,73 @@
+<%- include('partials/header') %>
+
+<div class="relative bg-cover bg-center bg-fixed min-h-screen flex flex-col" style="background-image: url('/content/photos/DSC02582.jpg');">
+    <!-- Overlay for text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <main class="relative container mx-auto px-4 py-12 text-white flex-grow">
+
+        <!-- Upcoming Shows Section -->
+        <section id="upcoming-shows" class="mb-16">
+            <h1 class="text-4xl font-bold mb-8 text-center">Upcoming Shows</h1>
+            <% if (upcomingShows.length > 0) { %>
+                <div class="space-y-8">
+                    <% upcomingShows.forEach(show => { %>
+                        <div class="md:flex bg-gray-800 bg-opacity-70 rounded-lg overflow-hidden shadow-lg">
+                            <div class="md:w-1/3">
+                                <img class="object-cover w-full h-full" src="<%= show.imageUrl %>" alt="Flyer for <%= show.title %>">
+                            </div>
+                            <div class="p-6 md:w-2/3">
+                                <p class="text-sm text-gray-400 mb-1"><%= new Date(show.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) %></p>
+                                <h2 class="text-2xl font-bold mb-2"><%= show.title %></h2>
+                                <p class="text-gray-300"><%= show.description %></p>
+                                <% if (show.ticketLink) { %>
+                                    <a href="<%= show.ticketLink %>" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 px-6 py-2 bg-red-600 text-white font-bold rounded-full hover:bg-red-500 transition-colors duration-200">
+                                        Get Tickets
+                                    </a>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <!-- Placeholder for when there are no upcoming shows -->
+                <div class="md:flex bg-gray-800 bg-opacity-70 rounded-lg overflow-hidden shadow-lg animate-pulse">
+                    <div class="md:w-1/3 bg-gray-700">
+                        <!-- This div acts as an image placeholder -->
+                    </div>
+                    <div class="p-6 md:w-2/3">
+                        <div class="h-4 bg-gray-700 rounded w-1/2 mb-4"></div>
+                        <div class="h-6 bg-gray-700 rounded w-3/4 mb-2"></div>
+                        <div class="h-4 bg-gray-700 rounded w-full"></div>
+                    </div>
+                </div>
+            <% } %>
+        </section>
+
+        <!-- Past Shows Section -->
+        <section id="past-shows">
+            <h1 class="text-4xl font-bold mb-8 text-center">Past Shows</h1>
+            <% if (pastShows.length > 0) { %>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <% pastShows.forEach(show => { %>
+                        <div class="bg-gray-800 bg-opacity-70 rounded-lg overflow-hidden shadow-lg">
+                            <img class="w-full h-auto aspect-w-1 aspect-h-1 object-cover" src="<%= show.imageUrl %>" alt="Flyer for <%= show.title %>">
+                            <div class="p-6">
+                                <p class="text-sm text-gray-400 mb-1"><%= new Date(show.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) %></p>
+                                <h2 class="text-xl font-bold mb-2"><%= show.title %></h2>
+                                <p class="text-gray-300 text-sm"><%= show.description %></p>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <!-- No past shows to display -->
+            <% } %>
+        </section>
+
+    </main>
+
+    <div class="relative">
+        <%- include('partials/footer') %>
+    </div>
+</div>
