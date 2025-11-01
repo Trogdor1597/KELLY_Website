@@ -14,6 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+// Serve all static files (CSS, JS, images, etc.) from the 'public' directory.
+// This should be placed BEFORE your route definitions.
+app.use(express.static(path.join(__dirname, 'public')));
+
 // --- Authentication Middleware ---
 const basicAuth = (req, res, next) => {
   const user = process.env.ADMIN_USERNAME || 'admin';
@@ -93,17 +97,11 @@ app.get('/tour', (req, res) => {
       description: 'Noodlefest is a food festival that not only brings the most prestigious noodle eaters, but pair it with some of the best of up-and-coming musicians from across the state, and you got yourself one extraordinary festival. We are honored to be bringing back to the Rio Grande Valley, the 8th annual Noodlefest to 707 Coffeehouse, Saturday, November 29th, 2025. Come for the food but stay for the music.',
       imageUrl: '/content/photos/flyers/noodlefest2025.png',
       ticketLink: 'https://www.abunnyproduct.com/',
-    },
-    {
-      date: '',
-      title: '',
-      description: '',
-      imageUrl: '/content/photos/flyers/',
     }
   ];
 
   const now = new Date();
-  const upcomingShows = shows.filter(show => new Date(show.date) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
+  const upcomingShows = shows.filter(show => show.date && new Date(show.date) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
   const pastShows = shows.filter(show => new Date(show.date) < now).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   res.render('tour', { title: 'Tour', currentPage: 'tour', upcomingShows, pastShows });
@@ -119,7 +117,7 @@ app.get('/links', (req, res) => {
   const links = [
     { title: 'Spotify', url: 'https://open.spotify.com/artist/3Q0VxGoMBBlnZHU8qAh1Gz' },
     { title: 'Apple Music', url: 'https://music.apple.com/us/artist/kelly/1848358617' },
-    { title: 'YouTube Music', url: 'https://music.youtube.com/watch?v=c4Ai2BSrjOw' },
+    { title: 'YouTube Music', url: 'https://music.youtube.com/playlist?list=OLAK5uy_lMh05A4eJdQ9T84nL3Z_a-yId-T0AARp0' },
     { title: 'Amazon Music', url: 'https://music.amazon.com/albums/B0FXN797R6' },
   ];
 
@@ -186,10 +184,6 @@ app.get('/admin/contacts', basicAuth, (req, res) => { // Apply the auth middlewa
     res.render('admin-contacts', { title: 'Admin - Contacts', currentPage: 'admin', contacts: rows });
   });
 });
-
-// Serve all static files (CSS, JS, images, etc.) from the 'public' directory.
-// This makes files in `public/img` available at `/img/` and `public/photos` at `/photos/`.
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Start the server
 app.listen(port, () => {
