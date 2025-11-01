@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 
-<div class="relative bg-cover bg-center bg-fixed min-h-screen flex flex-col" style="background-image: url('/content/photos/DSC02633.jpg');">
+<div class="relative bg-cover bg-center bg-fixed min-h-screen flex flex-col" style="background-image: url('<%= baseURL %>/content/photos/DSC02633.jpg');">
     <!-- Overlay for text readability -->
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
@@ -18,7 +18,7 @@
         <div class="space-y-8">
             <% songs.forEach(song => { %>
                 <article class="bg-gray-800 bg-opacity-70 p-6 rounded-lg flex flex-col md:flex-row items-center gap-6 shadow-lg">
-                    <img src="<%= song.coverArtUrl %>" alt="Cover art for <%= song.title %>" class="w-48 h-48 object-cover rounded-md flex-shrink-0">
+                    <img src="<%= baseURL %><%= song.coverArtUrl %>" alt="Cover art for <%= song.title %>" class="w-48 h-48 object-cover rounded-md flex-shrink-0">
                     <div class="text-center md:text-left">
                         <h2 class="text-3xl font-bold text-red-500"><%= song.title %></h2>
                         <p class="text-gray-400 mb-4">Released: <%= new Date(song.releaseDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) %></p>

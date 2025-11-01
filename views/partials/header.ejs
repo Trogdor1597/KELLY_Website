@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link href="/output.css" rel="stylesheet">
+    <link href="<%= baseURL %>/output.css" rel="stylesheet">
 </head>
 <body class="<%= typeof bodyClass !== 'undefined' ? bodyClass : 'bg-black text-white font-sans pt-16' %>">
     <%- include('navbar') %>

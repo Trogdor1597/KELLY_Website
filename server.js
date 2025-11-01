@@ -14,6 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+// Make a baseURL variable available in all EJS templates
+app.use((req, res, next) => {
+  res.locals.baseURL = ''; // Use an empty string for root-relative paths
+  next();
+});
+
 // Serve all static files (CSS, JS, images, etc.) from the 'public' directory.
 // This should be placed BEFORE your route definitions.
 app.use(express.static(path.join(__dirname, 'public')));
