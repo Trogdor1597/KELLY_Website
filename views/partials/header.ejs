@@ -6,5 +6,5 @@
     <title><%= title %></title>
     <link href="/output.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white font-sans pt-16">
+<body class="<%= typeof bodyClass !== 'undefined' ? bodyClass : 'bg-black text-white font-sans pt-16' %>">
     <%- include('navbar') %>

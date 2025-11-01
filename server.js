@@ -144,7 +144,7 @@ app.get('/links', (req, res) => {
     }
   ];
 
-  res.render('links', { links: links, socials: socials });
+  res.render('links', { title: 'Links', currentPage: 'links', links: links, socials: socials });
 });
 
 // Define a route for the contact page
