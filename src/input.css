@@ -3,3 +3,18 @@
 @tailwind utilities;
 
 /* You can add your custom CSS here if needed */
+
+/*
+ * Responsive background for the homepage hero section.
+ */
+#hero-section {
+  /* Default background for mobile (portrait orientation) */
+  background-image: url('/content/photos/mobilebackgroundportrait.png');
+}
+
+@media (min-width: 768px) { /* This is Tailwind's 'md' breakpoint */
+  #hero-section {
+    /* Background for desktop (landscape orientation) */
+    background-image: url('/content/photos/DSC02615.jpg');
+  }
+}
