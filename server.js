@@ -123,7 +123,7 @@ app.get('/links', (req, res) => {
   const links = [
     { title: 'Spotify', url: 'https://open.spotify.com/artist/3Q0VxGoMBBlnZHU8qAh1Gz' },
     { title: 'Apple Music', url: 'https://music.apple.com/us/artist/kelly/1848358617' },
-    { title: 'YouTube Music', url: 'https://music.youtube.com/playlist?list=OLAK5uy_lMh05A4eJdQ9T84nL3Z_a-yId-T0AARp0' },
+    { title: 'YouTube Music', url: 'https://music.youtube.com/channel/UCJhhAqydDfMhzAZRELFOawA' },
     { title: 'Amazon Music', url: 'https://music.amazon.com/albums/B0FXN797R6' },
   ];
 
