@@ -101,7 +101,7 @@ app.get('/tour', (req, res) => {
       location: '707 Coffee House',
       address: '707 S Alamo Rd, Alamo, Texas 78516',
       description: 'Noodlefest is a food festival that not only brings the most prestigious noodle eaters, but pair it with some of the best of up-and-coming musicians from across the state, and you got yourself one extraordinary festival. We are honored to be bringing back to the Rio Grande Valley, the 8th annual Noodlefest to 707 Coffeehouse, Saturday, November 29th, 2025. Come for the food but stay for the music.',
-      imageUrl: '/content/photos/flyers/noodlefest2025.png',
+      imageUrl: '/content/photos/flyers/noodlefest2025.jpg',
       ticketLink: 'https://www.abunnyproduct.com/',
     }
   ];
