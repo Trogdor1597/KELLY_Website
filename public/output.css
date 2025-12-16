@@ -676,17 +676,9 @@ video {
   z-index: 20;
 }
 
-.z-30 {
-  z-index: 30;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.-mt-12 {
-  margin-top: -3rem;
 }
 
 .-mt-8 {
@@ -723,6 +715,10 @@ video {
 
 .mt-12 {
   margin-top: 3rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .mt-4 {
@@ -777,10 +773,6 @@ video {
   height: 1.5rem;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-auto {
   height: auto;
 }
@@ -815,14 +807,6 @@ video {
 
 .w-48 {
   width: 12rem;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-auto {
@@ -911,10 +895,6 @@ video {
   align-items: flex-start;
 }
 
-.items-end {
-  align-items: flex-end;
-}
-
 .items-center {
   align-items: center;
 }
@@ -923,16 +903,8 @@ video {
   justify-content: flex-start;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
 }
 
 .gap-16 {
@@ -1093,14 +1065,6 @@ video {
 
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
-}
-
-.bg-opacity-95 {
-  --tw-bg-opacity: 0.95;
-}
-
-.bg-contain {
-  background-size: contain;
 }
 
 .bg-cover {
@@ -1293,6 +1257,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1323,8 +1291,8 @@ video {
   transition-duration: 150ms;
 }
 
-.transition-transform {
-  transition-property: transform;
+.transition-opacity {
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1337,10 +1305,6 @@ video {
   transition-duration: 300ms;
 }
 
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* You can add your custom CSS here if needed */
 
 /*
@@ -1349,7 +1313,7 @@ video {
 
 #hero-section {
   /* Default background for mobile (portrait orientation) */
-  background-image: url('/content/photos/mobilebackgroundportrait.png');
+  background-image: url('/content/photos/portraitcornerbandpic.jpg');
 }
 
 @media (min-width: 768px) {
@@ -1357,7 +1321,7 @@ video {
 
   #hero-section {
     /* Background for desktop (landscape orientation) */
-    background-image: url('/content/photos/DSC02615.jpg');
+    background-image: url('/content/photos/cornerbandpic.jpg');
   }
 }
 
@@ -1418,6 +1382,10 @@ video {
   --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity, 1));
 }
 
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
 @media (min-width: 768px) {
   .md\:flex {
     display: flex;
@@ -1443,8 +1411,10 @@ video {
     flex-direction: row;
   }
 
-  .md\:bg-cover {
-    background-size: cover;
+  .md\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:bg-fixed {
@@ -1473,6 +1443,11 @@ video {
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .md\:text-xl {

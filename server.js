@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // --- Authentication Middleware ---
 const basicAuth = (req, res, next) => {
-  const user = process.env.ADMIN_USERNAME || 'admin';
+  const user = process.env.ADMIN_USERNAME;
   const pass = process.env.ADMIN_PASSWORD;
 
   if (!pass) {

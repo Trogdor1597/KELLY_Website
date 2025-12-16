@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 
-<div class="relative bg-cover bg-center bg-fixed min-h-screen flex flex-col" style="background-image: url('<%= baseURL %>/content/photos/DSC02582.jpg');">
+<div class="relative bg-cover bg-center bg-fixed min-h-screen flex flex-col" style="background-image: url('<%= baseURL %>/content/photos/papertiger.jpg');">
     <!-- Overlay for text readability -->
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
@@ -50,11 +50,11 @@
             <% if (pastShows.length > 0) { %>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <% pastShows.forEach(show => { %>
-                        <div class="bg-gray-800 bg-opacity-70 rounded-lg overflow-hidden shadow-lg">
-                            <img class="w-full h-auto aspect-w-1 aspect-h-1 object-cover" src="<%= baseURL %><%= show.imageUrl %>" alt="Flyer for <%= show.title %>">
-                            <div class="p-6">
+                        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                            <img class="w-full h-auto" src="<%= baseURL %><%= show.imageUrl %>" alt="Flyer for <%= show.title %>">
+                            <div class="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
                                 <p class="text-sm text-gray-400 mb-1"><%= new Date(show.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) %></p>
-                                <h2 class="text-xl font-bold mb-2"><%= show.title %></h2>
+                                <h2 class="text-xl font-bold mb-2 text-white"><%= show.title %></h2>
                                 <p class="text-gray-300 text-sm"><%= show.description %></p>
                             </div>
                         </div>

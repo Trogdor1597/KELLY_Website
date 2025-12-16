@@ -9,12 +9,12 @@
  */
 #hero-section {
   /* Default background for mobile (portrait orientation) */
-  background-image: url('/content/photos/mobilebackgroundportrait.png');
+  background-image: url('/content/photos/portraitcornerbandpic.jpg');
 }
 
 @media (min-width: 768px) { /* This is Tailwind's 'md' breakpoint */
   #hero-section {
     /* Background for desktop (landscape orientation) */
-    background-image: url('/content/photos/DSC02615.jpg');
+    background-image: url('/content/photos/cornerbandpic.jpg');
   }
 }

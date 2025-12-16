@@ -1,37 +1,13 @@
 <header class="bg-black bg-opacity-70 fixed w-full top-0 z-20">
-    <div class="container mx-auto flex items-center justify-between p-4 text-white">
-        <a href="/" class="text-2xl font-extrabold uppercase tracking-wider">KELLY</a>
+    <div class="container mx-auto flex items-center justify-center p-4 text-white">
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-6 items-center">
+        <!-- Navigation -->
+        <nav class="flex space-x-4 md:space-x-6 items-center text-sm md:text-base">
             <a href="/" class="hover:text-red-500 transition-colors <%= currentPage === 'home' ? 'text-red-500 border-b-2 border-red-500 pb-1' : '' %>">Home</a>
             <a href="/music" class="hover:text-red-500 transition-colors <%= currentPage === 'music' ? 'text-red-500 border-b-2 border-red-500 pb-1' : '' %>">Music</a>
             <a href="/tour" class="hover:text-red-500 transition-colors <%= currentPage === 'tour' ? 'text-red-500 border-b-2 border-red-500 pb-1' : '' %>">Tour</a>
             <a href="/merch" class="hover:text-red-500 transition-colors <%= currentPage === 'merch' ? 'text-red-500 border-b-2 border-red-500 pb-1' : '' %>">Merch</a>
             <a href="/contact" class="hover:text-red-500 transition-colors <%= currentPage === 'contact' ? 'text-red-500 border-b-2 border-red-500 pb-1' : '' %>">Contact</a>
         </nav>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
     </div>
 </header>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-30 hidden transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-    <div class="flex justify-end p-4">
-        <button id="close-mobile-menu" class="text-white">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-    </div>
-    <nav class="flex flex-col items-center justify-center h-full -mt-12 space-y-8">
-        <a href="/" class="text-3xl <%= currentPage === 'home' ? 'text-red-500' : '' %>">Home</a>
-        <a href="/music" class="text-3xl <%= currentPage === 'music' ? 'text-red-500' : '' %>">Music</a>
-        <a href="/tour" class="text-3xl <%= currentPage === 'tour' ? 'text-red-500' : '' %>">Tour</a>
-        <a href="/merch" class="text-3xl <%= currentPage === 'merch' ? 'text-red-500' : '' %>">Merch</a>
-        <a href="/contact" class="text-3xl <%= currentPage === 'contact' ? 'text-red-500' : '' %>">Contact</a>
-    </nav>
-</div>
