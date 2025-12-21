@@ -1181,6 +1181,14 @@ video {
   padding-top: 4rem;
 }
 
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1407,6 +1415,14 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:-mt-4 {
+    margin-top: -1rem;
+  }
+
+  .md\:-mt-8 {
+    margin-top: -2rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1448,6 +1464,10 @@ video {
   .md\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:text-left {
