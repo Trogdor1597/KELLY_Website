@@ -1,12 +1,13 @@
-require('dotenv').config(); // Load environment variables from .env file
-const express = require('express');
 const path = require('path'); // Node.js module for working with file paths
+require('dotenv').config({ path: path.join(__dirname, '.env') }); // Load environment variables from .env file
+const express = require('express');
 const sqlite3 = require('sqlite3').verbose(); // Use .verbose() for more detailed error logging
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Set EJS as the view engine
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Middleware to parse URL-encoded bodies (as sent by HTML forms)
@@ -51,7 +52,8 @@ const basicAuth = (req, res, next) => {
 
 
 // --- Database Setup ---
-const db = new sqlite3.Database('./database.db', (err) => {
+const dbPath = path.join(__dirname, 'database.db');
+const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         return console.error(err.message);
     }
