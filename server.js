@@ -25,6 +25,9 @@ app.use((req, res, next) => {
 // This should be placed BEFORE your route definitions.
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Health check endpoint for monitoring
+app.get('/health', (req, res) => res.sendStatus(200));
+
 // --- Authentication Middleware ---
 const basicAuth = (req, res, next) => {
   const user = process.env.ADMIN_USERNAME;
