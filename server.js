@@ -85,8 +85,14 @@ app.get('/music', (req, res) => {
     {
       title: 'DFD (Danger-Fighting Demons)',
       releaseDate: '2025-10-31', // Standardized date format for sorting
-      description: "Danger-Fighting Demons is KELLY's debut single. The song synthesizes the band's influences into one cohesive sound: a hardcore, fast, emo track that serves as an ode to the originals who inspired them to become the musicians they are today.",
+      description: "'Danger-Fighting Demons' is KELLY's debut single. The song synthesizes the band's influences into one cohesive sound: a hardcore, fast, emo track that serves as an ode to the originals who inspired them to become the musicians they are today.",
       coverArtUrl: '/content/photos/dfd_cover.jpg'
+    },
+    {
+      title: 'Inside This Hell',
+      releaseDate: '2026-01-01', // Standardized date format for sorting
+      description: "'Inside This Hell' is a visceral throwback to early 2000s hard rock. Driven by crushing riffs, angst-filled vocals, and post-hardcore drum rhythms, KELLY delivers a nasty, in-your-face anthem that demands to be played loud.",
+      coverArtUrl: '/content/photos/thisHell_cover.Png'
     }
     // Add more song objects here in the future
   ];

@@ -1,9 +1,18 @@
 <%- include('partials/header') %>
 
-<div class="relative bg-cover bg-center bg-fixed min-h-screen flex flex-col" style="background-image: url('<%= baseURL %>/content/photos/DSC02633.jpg');">
-    <!-- Overlay for text readability -->
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+<%
+    let backgroundImageUrl = baseURL + '/content/photos/DSC02633.jpg';
+    if (typeof songs !== 'undefined' && songs.length > 0) {
+        const latestSong = songs.reduce((prev, current) => (new Date(prev.releaseDate) > new Date(current.releaseDate)) ? prev : current);
+        backgroundImageUrl = baseURL + latestSong.coverArtUrl;
+    }
+%>
 
+<!-- Fixed Background & Overlay -->
+<div class="fixed inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<%= backgroundImageUrl %>'); z-index: -1;"></div>
+<div class="fixed inset-0 bg-black bg-opacity-50" style="z-index: -1;"></div>
+
+<div class="relative min-h-screen flex flex-col">
     <!-- Main Content for Music Page -->
     <main class="relative container mx-auto px-4 py-12 flex-grow">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-8 border-b-2 border-red-500 pb-2">Latest Releases</h1>
@@ -16,7 +25,8 @@
         </div>
         
         <div class="space-y-8">
-            <% songs.forEach(song => { %>
+            <% if (typeof songs !== 'undefined' && songs.length > 0) { %>
+                <% songs.forEach(song => { %>
                 <article class="bg-gray-800 bg-opacity-70 p-6 rounded-lg flex flex-col md:flex-row items-center gap-6 shadow-lg">
                     <img src="<%= baseURL %><%= song.coverArtUrl %>" alt="Cover art for <%= song.title %>" class="w-48 h-48 object-cover rounded-md flex-shrink-0">
                     <div class="text-center md:text-left">
@@ -25,7 +35,10 @@
                         <p class="text-gray-300"><%= song.description %></p>
                     </div>
                 </article>
-            <% }) %>
+                <% }) %>
+            <% } else { %>
+                <p class="text-center text-gray-400 text-xl">No releases found at this time.</p>
+            <% } %>
         </div>
     </main>
 

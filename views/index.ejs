@@ -1,14 +1,26 @@
 <%- include('partials/header') %>
 
 <main>
+    <style>
+        #hero-section {
+            min-height: 70vh;
+            background-position: 50% 4rem;
+        }
+        @media (min-width: 768px) {
+            #hero-section {
+                min-height: 100vh;
+                background-position: center;
+            }
+        }
+    </style>
     <!-- Hero Section -->
     <section 
         id="hero-section"
-        class="min-h-screen flex flex-col items-center justify-start bg-contain bg-black bg-no-repeat bg-center md:bg-fixed relative pt-12 md:pt-0 md:-mt-8"
+        class="flex flex-col items-center justify-start bg-cover md:bg-contain bg-black bg-no-repeat bg-center md:bg-fixed relative pt-12 md:pt-0 md:-mt-8 pb-8"
     >
         <!-- Content -->
         <div class="relative z-10 w-10/12 md:w-1/2 max-w-xl px-8 md:-mt-4">
-            <img src="<%= baseURL %>/content/photos/kellylogo_black_whiteoutline.png" alt="KELLY band logo" class="mx-auto">
+            <img src="<%= baseURL %>/content/photos/kellylogo_white_blackoutline.png" alt="KELLY band logo" class="mx-auto">
         </div>
     </section>
 
@@ -38,20 +50,13 @@
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
                 </a>
             </div>
-
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-red-500 uppercase tracking-wider">Watch Our Latest Videos</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-red-500 uppercase tracking-wider">
+                <a href="https://www.youtube.com/@thebandKELLY" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 hover:underline transition-colors duration-300">Watch Our Latest Videos</a>
+            </h2>
             
             <!-- Responsive YouTube Embed -->
              <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
                 <iframe src="https://www.youtube.com/embed/HheCibnAMQU" title="DFD - BTS FOOTAGE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
-            </div>
-
-             <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
-                <iframe src="https://www.youtube.com/embed/Jr2pKFYhc9Q" title="DFD - KELLY LIVE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
-            </div>
-
-            <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
-                <iframe src="https://www.youtube.com/embed/SMIBodsbReY" title="DFD - KELLY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
             </div>
             
         </div>
