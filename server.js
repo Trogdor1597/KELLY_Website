@@ -114,6 +114,24 @@ app.get('/tour', (req, res) => {
       description: 'Noodlefest is a food festival that not only brings the most prestigious noodle eaters, but pair it with some of the best of up-and-coming musicians from across the state, and you got yourself one extraordinary festival. We are honored to be bringing back to the Rio Grande Valley, the 8th annual Noodlefest to 707 Coffeehouse, Saturday, November 29th, 2025. Come for the food but stay for the music.',
       imageUrl: '/content/photos/flyers/noodlefest2025.jpg',
       ticketLink: 'https://www.abunnyproduct.com/',
+    },
+    {
+      date: '2026-01-09',
+      title: 'The Flying Walrus',
+      location: 'The Flying Walrus',
+      address: '204 S 17th St, McAllen, Texas 78501',
+      description: 'Food, drinks and live music on 17th Street in McAllen, Texas.',
+      imageUrl: '/content/photos/flyers/FlyingwalrisJan9.jpg',
+      ticketLink: 'https://www.instagram.com/flyingwalrusbar',
+    },
+    {
+      date: '2026-01-24',
+      title: 'The Klef Presents',
+      location: 'Klef Music Venue',
+      address: '3365 Bensten Palm Dr, Mission, Texas 78574',
+      description: 'A night filled with alternative-hardcore bands and fun.',
+      imageUrl: '/content/photos/flyers/klefshow.jpg',
+      ticketLink: 'https://www.instagram.com/klefoffical',
     }
   ];
 
