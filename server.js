@@ -167,11 +167,6 @@ app.get('/links', (req, res) => {
       url: 'https://tiktok.com/@__kelly.tx',
       svg: '<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>'
     },
-    { 
-      name: 'X/Twitter', 
-      url: 'https://x.com/__kellydottx',
-      svg: '<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
-    },
     {
       name: 'Facebook',
       url: 'https://facebook.com/thebandkelly',
