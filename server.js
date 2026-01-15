@@ -132,6 +132,15 @@ app.get('/tour', (req, res) => {
       description: 'A night filled with alternative-hardcore bands and fun.',
       imageUrl: '/content/photos/flyers/klefshow.jpg',
       ticketLink: 'https://www.instagram.com/klefoffical',
+    },
+    {
+      date: '2026-01-23',
+      title: "Mia's Birthday Bash",
+      location: 'Valle Verde',
+      address: '419 S 17th St Ste A, McAllen, TX 78501',
+      description: 'Happy Birthday MIA!',
+      imageUrl: '/content/photos/flyers/mia_birthday_show.jpg',
+      ticketLink: 'https://www.instagram.com/cockatielbooking/',
     }
   ];
 
