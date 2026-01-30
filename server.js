@@ -141,6 +141,15 @@ app.get('/tour', (req, res) => {
       description: 'Happy Birthday MIA!',
       imageUrl: '/content/photos/flyers/mia_birthday_show.jpg',
       ticketLink: 'https://www.instagram.com/cockatielbooking/',
+    },
+    {
+      date: '2026-02-13',
+      title: "Nightmare on Jackson St",
+      location: 'Luna Sky Lounge',
+      address: '318 W Jackson Ave Harlingen, TX',
+      description: 'A night of terror and good vibes!',
+      imageUrl: '/content/photos/flyers/luna_sky_lounge_feb2026.jpeg',
+      ticketLink: 'https://www.instagram.com/amanihiphop',
     }
   ];
 
